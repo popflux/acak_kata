@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: myapp_development
+  pool: 5
+  username: myapp
+  password: password1
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: acak_kata_development
+  pool: 5
+  username: user_acak
+  password: 654321
+  host: localhost

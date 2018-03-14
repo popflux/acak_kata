@@ -1,0 +1,24 @@
+<%= form_for(@quiz) do |f| %>
+  <% if @quiz.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quiz.errors.count, "error") %> prohibited this quiz from being saved:</h2>
+
+      <ul>
+      <% @quiz.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :question_id, value: ( @quiz.new_record? ? @question.id : @quiz.question_id ) %>
+  <div class="field">
+    Tebak kata: <%= f.text_field :shuffle_word, readonly: true, value: ( @quiz.new_record? ? string_shuffle(@question.name) : @quiz.shuffle_word ) %>
+  </div>
+  <div class="field">
+    Jawaban: <%= f.text_field :answer %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Submit' %>
+  </div>
+<% end %>
