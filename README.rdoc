@@ -5,5 +5,3 @@
 * PosgteSQL
 
 * Rails 4.2.1
-
-* Database creation
